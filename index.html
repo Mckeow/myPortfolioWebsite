@@ -5,21 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>James Appiah | Frontend Developer</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
+      :root {
+        --bg: #0b0d12;
+        --card: #141826;
+        --accent: #7c7cff;
+        --accent2: #00f5d4;
+        --text: #ffffff;
+        --muted: #b7b9d1;
+      }
+
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
       }
 
       body {
-        background: #0f1115;
-        color: #fff;
-        line-height: 1.6;
+        background: radial-gradient(circle at top, #151a30, var(--bg));
+        color: var(--text);
+        overflow-x: hidden;
       }
 
       a {
@@ -29,147 +38,199 @@
 
       /* NAV */
       header {
-        padding: 25px 80px;
+        padding: 28px 90px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         position: sticky;
         top: 0;
-        background: #0f1115;
-        z-index: 10;
+        background: rgba(11, 13, 18, 0.7);
+        backdrop-filter: blur(12px);
+        z-index: 20;
       }
 
       .logo {
         font-weight: 700;
         font-size: 22px;
-        color: #facc15;
+        background: linear-gradient(45deg, var(--accent), var(--accent2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
       nav ul {
         display: flex;
+        gap: 35px;
         list-style: none;
-        gap: 30px;
+      }
+
+      nav li {
+        color: var(--muted);
+        cursor: pointer;
+        transition: 0.3s;
       }
 
       nav li:hover {
-        color: #facc15;
+        color: var(--text);
       }
 
-      .btn {
-        background: #facc15;
+      .hire {
+        padding: 10px 26px;
+        border-radius: 40px;
+        background: linear-gradient(45deg, var(--accent), var(--accent2));
         color: #000;
-        padding: 10px 22px;
-        border-radius: 30px;
-        font-weight: 500;
+        font-weight: 600;
       }
 
       /* HERO */
       .hero {
-        padding: 100px 80px;
+        padding: 140px 90px 100px;
         display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 60px;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 80px;
         align-items: center;
       }
 
       .hero h1 {
-        font-size: 58px;
-        line-height: 1.1;
-        margin-bottom: 20px;
-      }
-
-      .hero h1 span {
-        color: #facc15;
-      }
-
-      .hero p {
-        color: #b5b5b5;
-        max-width: 500px;
+        font-size: 68px;
+        line-height: 1.05;
         margin-bottom: 30px;
       }
 
-      .hero img {
-        width: 100%;
-        border-radius: 20px;
+      .hero h1 span {
+        background: linear-gradient(45deg, var(--accent), var(--accent2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero p {
+        color: var(--muted);
+        max-width: 520px;
+        margin-bottom: 40px;
+        font-size: 18px;
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 20px;
+      }
+
+      .btn {
+        padding: 14px 30px;
+        border-radius: 40px;
+        font-weight: 600;
+      }
+
+      .btn.primary {
+        background: linear-gradient(45deg, var(--accent), var(--accent2));
+        color: #000;
+      }
+
+      .btn.secondary {
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: var(--text);
+      }
+
+      .hero-card {
+        background: linear-gradient(160deg, #1a1f35, #0b0d12);
+        border-radius: 26px;
+        padding: 50px;
+        box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
+      }
+
+      .hero-card h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .hero-card p {
+        color: var(--muted);
       }
 
       /* SKILLS */
       .skills {
-        padding: 80px;
-        background: #151822;
+        padding: 80px 90px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
-        text-align: center;
       }
 
       .skill {
-        background: #0f1115;
-        padding: 30px;
-        border-radius: 16px;
+        background: var(--card);
+        padding: 35px;
+        border-radius: 20px;
+        text-align: center;
+        transition: 0.3s;
       }
 
-      .skill h3 {
-        margin-top: 10px;
+      .skill:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(124, 124, 255, 0.25);
       }
 
       /* PROJECTS */
       .projects {
-        padding: 100px 80px;
+        padding: 120px 90px;
       }
 
       .projects h2 {
-        font-size: 44px;
-        margin-bottom: 60px;
+        font-size: 52px;
+        margin-bottom: 70px;
       }
 
       .project {
         display: grid;
         grid-template-columns: 1.3fr 1fr;
-        gap: 50px;
-        margin-bottom: 80px;
+        gap: 70px;
+        margin-bottom: 120px;
         align-items: center;
       }
 
-      .project img {
-        width: 100%;
-        border-radius: 18px;
+      .project:nth-child(even) {
+        grid-template-columns: 1fr 1.3fr;
+      }
+
+      .project-card {
+        background: linear-gradient(160deg, #1a1f35, #0b0d12);
+        padding: 60px;
+        border-radius: 28px;
+        box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
       }
 
       .project h3 {
-        font-size: 28px;
-        margin-bottom: 15px;
-      }
-
-      .project p {
-        color: #b5b5b5;
+        font-size: 32px;
         margin-bottom: 20px;
+      }
+      .project p {
+        color: var(--muted);
+        margin-bottom: 30px;
+        font-size: 17px;
       }
 
       .project a {
-        color: #facc15;
-        font-weight: 500;
+        font-weight: 600;
+        background: linear-gradient(45deg, var(--accent), var(--accent2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
       /* CTA */
       .cta {
-        padding: 80px;
-        background: #facc15;
-        color: #000;
+        padding: 120px 90px;
         text-align: center;
+        background: linear-gradient(160deg, #1a1f35, #0b0d12);
       }
 
       .cta h2 {
-        font-size: 46px;
-        margin-bottom: 20px;
+        font-size: 60px;
+        margin-bottom: 30px;
       }
 
       /* FOOTER */
       footer {
-        padding: 40px 80px;
+        padding: 40px 90px;
         display: flex;
         justify-content: space-between;
-        color: #aaa;
+        color: var(--muted);
+        font-size: 14px;
       }
 
       /* RESPONSIVE */
@@ -189,9 +250,15 @@
         .skills {
           grid-template-columns: 1fr 1fr;
         }
+        .hero h1 {
+          font-size: 46px;
+        }
+        .cta h2 {
+          font-size: 42px;
+        }
         footer {
           flex-direction: column;
-          gap: 15px;
+          gap: 10px;
           text-align: center;
         }
       }
@@ -199,7 +266,7 @@
   </head>
   <body>
     <header>
-      <div class="logo">James Appiah</div>
+      <div class="logo">James.dev</div>
       <nav>
         <ul>
           <li>Home</li>
@@ -208,87 +275,79 @@
           <li>Contact</li>
         </ul>
       </nav>
-      <a href="#" class="btn">Hire Me</a>
+      <a class="hire" href="#">Hire Me</a>
     </header>
 
     <section class="hero">
       <div>
-        <h1>
-          Frontend Developer<br /><span>Building Modern</span><br />Web
-          Experiences
-        </h1>
+        <h1>I Build <span>Interfaces</span><br />That Hit Hard ⚡</h1>
         <p>
-          I design and build responsive, user-friendly websites using modern
-          frontend technologies with a strong focus on clean UI and performance.
+          Frontend developer crafting bold, modern and highly responsive user
+          interfaces with clean code and serious attention to detail.
         </p>
-        <a href="#" class="btn">View My Work</a>
+        <div class="hero-cta">
+          <a class="btn primary" href="#">View Projects</a>
+          <a class="btn secondary" href="#">Contact Me</a>
+        </div>
       </div>
-      <img
-        src="https://images.unsplash.com/photo-1581090700227-1e37b190418e"
-        alt="developer"
-      />
+      <div class="hero-card">
+        <h3>Frontend Stack</h3>
+        <p>HTML • CSS • JavaScript<br />Responsive Design • Git</p>
+      </div>
     </section>
 
     <section class="skills">
-      <div class="skill"><h3>HTML5</h3></div>
-      <div class="skill"><h3>CSS3</h3></div>
-      <div class="skill"><h3>JavaScript</h3></div>
-      <div class="skill"><h3>Responsive Design</h3></div>
+      <div class="skill">HTML5</div>
+      <div class="skill">CSS3</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Responsive UI</div>
     </section>
 
     <section class="projects">
       <h2>Featured Projects</h2>
 
       <div class="project">
-        <img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-        />
-        <div>
-          <h3>Project One</h3>
+        <div class="project-card">
+          <h3>Furniture Landing Page</h3>
           <p>
-            A modern landing page built with clean HTML and CSS, focusing on
-            layout, spacing, and responsive design.
+            High-end UI landing page converted from Figma to pixel-perfect HTML
+            and CSS with responsive layouts.
           </p>
-          <a href="">Live Demo →</a>
+          <a href="#">Live Demo →</a>
+        </div>
+        <div class="project-card">
+          <h3>Portfolio Website</h3>
+          <p>
+            Personal portfolio focused on strong typography, layout balance and
+            modern design aesthetics.
+          </p>
+          <a href="#">Live Demo →</a>
         </div>
       </div>
 
       <div class="project">
-        <div>
-          <h3>Project Two</h3>
+        <div class="project-card">
+          <h3>Business Website</h3>
           <p>
-            A portfolio website showcasing multiple projects with smooth layout
-            flow and clean UI structure.
+            Clean business website showcasing services, call-to-actions and
+            smooth content flow.
           </p>
           <a href="#">Live Demo →</a>
         </div>
-        <img
-          src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6"
-        />
-      </div>
-
-      <div class="project">
-        <img
-          src="https://images.unsplash.com/photo-1586105251261-72a756497a11"
-        />
-        <div>
-          <h3>Project Three</h3>
-          <p>
-            A responsive business website built to practice layouts, typography,
-            and visual hierarchy.
-          </p>
-          <a href="#">Live Demo →</a>
+        <div class="project-card">
+          <h3>Coming Soon</h3>
+          <p>More advanced JavaScript and React-based projects loading…</p>
         </div>
       </div>
     </section>
 
     <section class="cta">
-      <h2>Have a project in mind?</h2>
-      <a href="#" class="btn">Let's Talk</a>
+      <h2>Let’s Build Something Legendary 🚀</h2>
+      <a class="btn primary" href="#">Get In Touch</a>
     </section>
 
     <footer>
-      <p>© 2026 James Appiah</p>
+      <p>© 2025 James Appiah</p>
       <p>Frontend Developer</p>
     </footer>
   </body>
